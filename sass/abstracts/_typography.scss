@@ -1,0 +1,18 @@
+$ff-primary: 'IBM Plex Serif', serif;
+$ff-secondary: 'Poppins', sans-serif;
+
+$font-sizes: (
+  900: clamp(3.375rem, 0.5rem + 6.5vw, 6rem),
+  800: 3.375rem,
+  700: 2.125rem,
+  500: 1.25rem,
+  400: 1.0625rem,
+  300: 1rem,
+  200: 0.8125rem,
+  100: 0.75rem,
+);
+
+$fw-300: 300;
+$fw-400: 400;
+$fw-500: 500;
+$fw-700: 700;

@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+
+.title-xl {
+  font-family: $ff-secondary;
+  font-size: fs(900);
+  font-weight: $fw-300;
+  line-height: 1.1;
+  color: clr(neutral, 900);
+}

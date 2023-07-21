@@ -1,0 +1,113 @@
+@use '../abstracts/' as *;
+@use 'sass:map';
+
+.courses__menu {
+  display: flex;
+  gap: size(24);
+  padding-block: size(24);
+  position: relative;
+
+  & > *:last-child {
+    margin-left: auto;
+  }
+}
+
+.button[data-button-type='filter-toggle'] {
+  @include mq(small) {
+    display: none;
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  gap: size(36);
+
+  @media (max-width: map.get($breakpoints, small)) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-block: size(48);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transform-origin: top;
+    background-color: clr(neutral, 050);
+    box-shadow: 0px 6px 5px rgb(0, 0, 0, 0.02), 0px 22px 18px rgb(0, 0, 0, 0.03),
+      0px 100px 80px rgb(0, 0, 0, 0.05);
+
+    & > * {
+      opacity: 0;
+    }
+
+    &[data-state='closed'] {
+      display: none;
+    }
+
+    &[data-state='opened'] {
+      display: flex;
+      animation-name: openMenu;
+      animation-duration: 400ms;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    &[data-content='visible'] > * {
+      animation-name: showContent;
+      animation-duration: 200ms;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    &[data-state='is-closing'] {
+      animation-name: closeMenu;
+      animation-duration: 400ms;
+      animation-delay: 200ms;
+      animation-timing-function: ease-in-out;
+    }
+
+    &[data-state='hidden'] > * {
+      animation-name: hideContent;
+      animation-duration: 200ms;
+      animation-timing-function: ease-in-out;
+    }
+  }
+}
+
+@keyframes openMenu {
+  0% {
+    transform: translateY(100%) scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    transform: translateY(100%) scaleY(1);
+  }
+}
+
+@keyframes closeMenu {
+  0% {
+    transform: translateY(100%) scaleY(1);
+    transform-origin: top;
+  }
+  100% {
+    transform: translateY(100%) scaleY(0);
+  }
+}
+
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideContent {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

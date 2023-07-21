@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:math';
+@use 'breakpoints' as *;
+
+@mixin mq($size) {
+  @if (map.has-key($breakpoints, $size)) {
+    $breakpoint: map.get($breakpoints, $size);
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if (meta.type-of($size) == number) {
+    @if (math.is-unitless($size)) {
+      @error 'The value #{$size} you provided has no unit';
+    } @else {
+      $breakpoint: $size;
+      @media screen and (min-width: $breakpoint) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'The value #{$size} is not a key in the map. Use a key from the map or a numeric value with a unit';
+  }
+}

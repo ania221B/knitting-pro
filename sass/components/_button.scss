@@ -1,0 +1,128 @@
+@use '../abstracts' as *;
+
+.button {
+  display: inline-block;
+  font-family: $ff-secondary;
+  font-weight: $fw-500;
+  text-decoration: none;
+
+  position: relative;
+  isolation: isolate;
+
+  &[type='button'] {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &[data-button-type='primary'] {
+    padding-block: 0.5em;
+    padding-inline: 1em;
+    border-radius: 2em;
+    background-color: clr(primary, 400);
+    color: clr(neutral, 100);
+  }
+  &[data-button-type='secondary'] {
+    padding-block: 0.625em;
+    padding-inline: 1.5em;
+    border-radius: 2em;
+    background-color: clr(neutral, 900);
+    color: clr(neutral, 100);
+  }
+
+  &[data-button-type='filter'],
+  &[data-button-type='filter-toggle'],
+  &[data-button-type='subscribe'] {
+    font-size: fs(200);
+    font-weight: $fw-400;
+    color: clr(neutral, 400);
+  }
+
+  &.is-selected {
+    color: clr(neutral, 900);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  &[data-button-type='primary']::after {
+    background-color: clr(secondary, 400);
+  }
+
+  &[data-button-type='secondary']::after {
+    background-color: clr(primary, 400);
+  }
+
+  &[data-button-type='text']::after {
+    inset: auto auto size(4) * -1 0;
+    height: 0.125em;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+    transform-origin: left;
+    opacity: 1;
+  }
+
+  &[data-button-type='filter']::after,
+  &[data-button-type='filter-toggle']::after,
+  &[data-button-type='subscribe']::after {
+    inset: auto auto size(20) * -1 0;
+    height: size(4);
+    background-color: currentColor;
+    border-radius: size(12);
+    transform: translateX(-100%);
+    transition: opacity 10ms ease-in, transform 300ms ease-in-out;
+    transform-origin: left;
+    opacity: 0;
+  }
+
+  &.is-selected::before {
+    content: '';
+    position: absolute;
+    inset: auto auto size(20) * -1 0;
+    width: 100%;
+    height: size(4);
+    background-color: currentColor;
+    border-radius: size(12);
+    opacity: 1;
+  }
+
+  &[data-button-type='text']:hover,
+  &[data-button-type='text']:focus {
+    color: clr(secondary, 400);
+  }
+  &[data-button-type='filter']:hover,
+  &[data-button-type='filter']:focus,
+  &[data-button-type='filter-toggle']:hover,
+  &[data-button-type='filter-toggle']:focus,
+  &[data-button-type='subscribe']:hover,
+  &[data-button-type='subscribe']:focus {
+    color: clr(neutral, 900);
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+  }
+
+  &[data-button-type='text']:hover::after {
+    transform: scaleX(1);
+  }
+  &[data-button-type='filter']:hover::after,
+  &[data-button-type='filter']:focus::after,
+  &[data-button-type='filter-toggle']:hover::after,
+  &[data-button-type='filter-toggle']:focus::after,
+  &[data-button-type='subscribe']:hover::after,
+  &[data-button-type='subscribe']:focus::after {
+    transform: translateX(0);
+  }
+}

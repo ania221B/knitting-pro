@@ -1,0 +1,80 @@
+@use '../abstracts/' as *;
+
+.search-bar {
+  --_button-size: 2rem;
+  --_bar-padding: 0.5rem;
+
+  flex-basis: calc(var(--_button-size) + var(--_bar-padding));
+  flex-grow: 0.5;
+  height: calc(var(--_button-size) + var(--_bar-padding));
+  margin-left: auto;
+  padding-block: var(--_bar-padding);
+  padding-inline: calc(var(--_bar-padding) / 2);
+  border-radius: 20vh;
+  transition: flex-basis 300ms ease-in-out;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  @include mq(large) {
+    margin-right: auto;
+  }
+
+  &__input {
+    border: none;
+    background-color: transparent;
+    padding: 0 0 0 size(24);
+    position: absolute;
+    inset: 0;
+    margin-block: auto;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+
+  &__submit {
+    border: none;
+    background: none;
+    display: grid;
+    place-items: center;
+    width: var(--_button-size);
+    height: var(--_button-size);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    margin-left: auto;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 5px clr(primary, 400);
+    }
+  }
+
+  &:focus-within {
+    flex-basis: clamp(10rem, 0.5rem + 10vw, 70%);
+    background-color: clr(neutral, 100);
+    border: 0.125rem solid clr(primary, 400);
+
+    .search-bar__input {
+      width: calc(100% - (var(--_button-size) + var(--_bar-padding)));
+      opacity: 1;
+      cursor: text;
+    }
+  }
+
+  @include mq(small) {
+    flex-basis: clamp(10rem, 0.5rem + 10vw, 70%);
+    background-color: clr(neutral, 100);
+
+    &__input {
+      width: calc(100% - (var(--_button-size) + var(--_bar-padding)));
+      opacity: 1;
+      cursor: text;
+    }
+  }
+}

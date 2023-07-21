@@ -1,0 +1,17 @@
+@use '../abstracts/' as *;
+
+.courses {
+  & > * {
+    --flow-spacer: #{size(32)};
+  }
+
+  .cards {
+    @include mq(medium) {
+      --grid-gap: #{size(32)};
+    }
+  }
+
+  .message[data-visibility='none'] {
+    display: none;
+  }
+}

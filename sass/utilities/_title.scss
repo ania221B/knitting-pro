@@ -1,0 +1,8 @@
+@use '../abstracts/' as *;
+
+.title {
+  font-family: $ff-secondary;
+  font-weight: $fw-300;
+  color: clr(neutral, 900);
+  line-height: 1.1;
+}

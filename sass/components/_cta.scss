@@ -1,0 +1,38 @@
+@use '../abstracts/' as *;
+
+.cta {
+  picture {
+    min-width: 20rem;
+    aspect-ratio: 1;
+    margin-inline: auto;
+
+    @include mq(small) {
+      min-width: 80%;
+      align-self: stretch;
+      aspect-ratio: 3 / 4;
+      margin-inline: unset;
+    }
+  }
+
+  .content {
+    align-self: center;
+    justify-self: center;
+    max-width: 30ch;
+    @include mq(small) {
+      max-width: 32ch;
+    }
+  }
+
+  button {
+    margin-top: 2rem;
+  }
+
+  &.line-decoration::after {
+    --padding: #{$container-padding-inline} * 2;
+    --max-width: #{$container-max-width};
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100% - var(--padding), var(--max-width));
+  }
+}

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/sass/main.scss">
+  <script src="/js/script.js" defer></script>
+  <title>Knitting Pro</title>
+</head>
+
+<body>
+  <header class="primary-header">
+    <div class="container">
+      <picture>
+        <source srcset="assets/logo-large.svg" media="(min-width: 45em)">
+        <img src="assets/logo-small.svg" alt="Knitting Pro" class="logo">
+      </picture>
+      <form class="search-bar" role="search" aria-label="site">
+        <label for="search-input" class="visually-hidden">Search</label>
+        <input id="search-input" class="search-bar__input" type="search">
+        <button class="search-bar__submit" type="submit">
+          <img src="assets/search.svg" alt="">
+        </button>
+      </form>
+      <div class="buttons">
+        <button class="button | fs-200 clr-primary-400" type="button" data-button-type="text">Sign in</button>
+        <button class="button | fs-200" type="button" data-button-type="primary">Get started</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container flow">
+        <picture class="primary-image">
+          <img src="assets/yarn.png" alt="Three balls of yarn, kniting needles and a started knitting project">
+        </picture>
+        <h1 class="title-xl">Become a knitting pro</h1>
+      </div>
+    </section>
+    <section class="courses section">
+      <div class="container flow">
+        <div class="courses__menu line-decoration">
+          <button class="button jsFilterToggle" type="button" data-button-type="filter-toggle" aria-label="filter menu toggle" aria-controls="filter-buttons" aria-expanded="false">Filter</button>
+
+          <div id="filter-buttons" class="filter-buttons jsFilterButtons" data-state="closed" data-content="hidden">
+            <button class="button jsFilterBtn is-selected" type="button" data-button-type="filter" data-filter="all">All courses</button>
+            <button class="button jsFilterBtn" type="button" data-button-type="filter" data-filter="beginner">Beginner</button>
+            <button class="button jsFilterBtn" type="button" data-button-type="filter" data-filter="intermediate">Intermediate</button>
+            <button class="button jsFilterBtn" type="button" data-button-type="filter" data-filter="expert">Expert</button>
+            <button class="button jsFilterBtn" type="button" data-button-type="filter" data-filter="grandmother">Grandmother</button>
+          </div>
+
+          <button class="button" type="button" data-button-type="subscribe">Subscribe</button>
+        </div>
+        <div class="cards grid-auto-fit">
+          <article class="card bg-neutral-100" data-difficulty="beginner">
+            <p class="card__tag bg-secondary-400 ">Beginner</p>
+            <div class="card__rating">
+              <p>4.4</p>
+              <ul class="card__stars" role="list" aria-hidden="true">
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#half-star"></use>
+                  </svg>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="card__content flow">
+              <header class="card__header flow">
+                <h2 class="card__title">Course Name</h2>
+                <p class="card__author">Autor's Name</p>
+              </header>
+            </div>
+
+            <div class="card__price">
+              <p>$15.99</p>
+            </div>
+
+            <button class="button" type="button" data-button-type="secondary" aria-label="Enroll on a Knitting Pro beginner course">Enroll</button>
+          </article>
+
+          <article class="card bg-neutral-100" data-difficulty="beginner">
+            <p class="card__tag bg-secondary-400 ">Beginner</p>
+            <div class="card__rating">
+              <p>4.8</p>
+              <ul class="card__stars" role="list" aria-hidden="true">
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#half-star"></use>
+                  </svg>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="card__content flow">
+              <header class="card__header flow">
+                <h2 class="card__title">Course Name can be long</h2>
+                <p class="card__author">Autor's Name</p>
+              </header>
+              <p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+            </div>
+
+            <div class="card__price">
+              <p class="old-price"><span>$23.99</span> sale</p>
+              <p>$15.99</p>
+            </div>
+
+            <button class="button" type="button" data-button-type="secondary" aria-label="Enroll on a Knitting Pro beginner course">Enroll</button>
+          </article>
+
+          <article class="card bg-neutral-100" data-difficulty="intermediate">
+            <p class="card__tag bg-primary-400 ">Intermediate</p>
+            <div class="card__rating">
+              <p>4.5</p>
+              <ul class="card__stars" role="list" aria-hidden="true">
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#half-star"></use>
+                  </svg>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="card__content flow">
+              <header class="card__header flow">
+                <h2 class="card__title">Course Name can be long and some times even longer</h2>
+                <p class="card__author">Autor's Name</p>
+              </header>
+            </div>
+
+            <div class="card__price">
+              <p>$23.99</p>
+            </div>
+
+            <button class="button" type="button" data-button-type="secondary" aria-label="Enroll on a Knitting Pro intermediate course">Enroll</button>
+          </article>
+
+          <article class="card bg-neutral-100" data-difficulty="beginner">
+            <p class="card__tag bg-secondary-400 ">Beginner</p>
+            <div class="card__rating">
+              <p>4.4</p>
+              <ul class="card__stars" role="list" aria-hidden="true">
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#half-star"></use>
+                  </svg>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="card__content flow">
+              <header class="card__header flow">
+                <h2 class="card__title">Course Name can be long and some times even longer</h2>
+                <p class="card__author">Autor's Name</p>
+              </header>
+
+            </div>
+
+            <div class="card__price">
+              <p>$15.99</p>
+            </div>
+
+            <button class="button" type="button" data-button-type="secondary" aria-label="Enroll on a Knitting Pro beginner course">Enroll</button>
+          </article>
+
+          <article class="card bg-neutral-100" data-difficulty="beginner">
+            <p class="card__tag bg-secondary-400 ">Beginner</p>
+            <div class="card__rating">
+              <p>4.8</p>
+              <ul class="card__stars" role="list" aria-hidden="true">
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#half-star"></use>
+                  </svg>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="card__content flow">
+              <header class="card__header flow">
+                <h2 class="card__title">Course Name</h2>
+                <p class="card__author">Autor's Name</p>
+              </header>
+              <p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+            </div>
+
+            <div class="card__price">
+              <p class="old-price"><span>$23.99</span> sale</p>
+              <p>$15.99</p>
+            </div>
+
+            <button class="button" type="button" data-button-type="secondary" aria-label="Enroll on a Knitting Pro beginner course">Enroll</button>
+          </article>
+
+          <article class="card bg-neutral-100" data-difficulty="intermediate">
+            <p class="card__tag bg-primary-400 ">Intermediate</p>
+            <div class="card__rating">
+              <p>4.5</p>
+              <ul class="card__stars" role="list" aria-hidden="true">
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#full-star"></use>
+                  </svg>
+                </li>
+                <li>
+                  <svg>
+                    <use xlink:href="#half-star"></use>
+                  </svg>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="card__content flow">
+              <header class="card__header flow">
+                <h2 class="card__title">Course Name can be long and some times even longer</h2>
+                <p class="card__author">Autor's Name</p>
+              </header>
+
+            </div>
+
+            <div class="card__price">
+
+              <p>$23.99</p>
+            </div>
+
+            <button class="button" type="button" data-button-type="secondary" aria-label="Enroll on a Knitting Pro beginner course">Enroll</button>
+          </article>
+
+          <div class="message" data-visibility="none">
+            <h2 class="title">No courses yet</h2>
+            <p>The courses you're looking for are not available yet. Please come back later.</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- full star -->
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none">
+        <symbol id="full-star" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00001 1L5.72501 5.61L0.640015 6.345L4.32001 9.935L3.45001 15L8.00001 12.61L12.55 15L11.68 9.935L15.36 6.35L10.275 5.61L8.00001 1Z" fill="black" />
+        </symbol>
+      </svg>
+
+
+      <!-- half star -->
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none">
+        <symbol id="half-star" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M5.72502 5.61L0.640015 6.35L4.32002 9.935L3.45001 15L8.00002 12.61V1L5.72502 5.61Z" fill="black" />
+        </symbol>
+      </svg>
+    </section>
+
+    <section class="about section bg-neutral-100">
+      <div class="container | even-columns" data-container="small">
+        <picture class="primary-image">
+          <img src="assets/yarn.png" alt="Three balls of yarn, kniting needles and a started knitting project">
+        </picture>
+        <div class="content">
+          <div class="flow">
+            <h2 class="title | fs-700">Welcome to the largest knitting community.</h2>
+            <p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna consectet adipiscing.</p>
+          </div>
+          <div class="buttons | even-columns">
+            <button class="button | fs-500 " type="button" data-button-type="primary">Get started</button>
+            <a class="button |  fs-500 clr-primary-400" href="#" data-button-type="text">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta section line-decoration">
+      <div class="container | even-columns">
+        <picture class="primary-image">
+          <img src="assets/profile-pic.png" alt="Smiling man in blue glasses">
+        </picture>
+        <div class="content flow">
+          <h2 class="title | fs-800">Become an instructor</h2>
+          <p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+          <button class="button" type="button" data-button-type="primary">Get started</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+
+    <section class="footer-primary">
+      <div class="container">
+        <nav class="footer__navigation flex-split" data-width="wide">
+          <picture>
+            <img src="assets/logo-large.svg" alt="Knitting Pro">
+          </picture>
+          <ul class="navigation-list flex-split" role="list">
+            <li><a class="navigation__link" href="#">Contact</a></li>
+            <li><a class="navigation__link" href="#">Legal Notice</a></li>
+            <li><a class="navigation__link" href="#">Privacy Policy</a></li>
+            <li><a class="navigation__link" href="#">Accessibility</a></li>
+          </ul>
+          <ul class="social-list" role="list">
+            <li>
+              <a href="#"><img src="assets/Youtube.svg" alt="Youtube logo"></a>
+            </li>
+            <li>
+              <a href="#"><img src="assets/Instagram.svg" alt="Instagram logo"></a>
+            </li>
+            <li>
+              <a href="#"><img src="assets/facebook.svg" alt="Facebook logo"></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <section class="footer-secondary bg-neutral-100">
+      <div class="container">
+        <dl class="even-columns">
+          <div class="flex-row">
+            <dt>Responsible:</dt>
+            <dd class="fw-500 clr-primary-400">Kevin Powell</dd>
+          </div>
+          <div class="flex-row">
+            <dt>Last Modified:</dt>
+            <dd>November 2020</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

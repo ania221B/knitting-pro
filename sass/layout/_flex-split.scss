@@ -1,0 +1,20 @@
+@use '../abstracts/' as *;
+
+.flex-split {
+  display: flex;
+  gap: var(--flex-split-gap, 1.5rem);
+  flex-direction: column;
+
+  @include mq(small) {
+    flex-direction: row;
+  }
+
+  &[data-width='wide'] {
+    @include mq(small) {
+      flex-direction: column;
+    }
+    @include mq(medium) {
+      flex-direction: row;
+    }
+  }
+}

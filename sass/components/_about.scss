@@ -1,0 +1,30 @@
+@use '../abstracts/' as *;
+
+.about {
+  picture {
+    max-width: 24rem;
+    aspect-ratio: 1;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq(small) {
+      grid-column: 2;
+      margin-left: auto;
+    }
+  }
+
+  .content {
+    align-self: center;
+  }
+
+  .buttons {
+    --grid-gap: 2rem;
+    grid-auto-rows: max-content;
+    grid-auto-columns: max-content;
+    margin-top: 2rem;
+  }
+
+  .button {
+    align-self: center;
+  }
+}

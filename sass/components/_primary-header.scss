@@ -1,0 +1,26 @@
+@use '../abstracts/' as *;
+
+.primary-header {
+  position: sticky;
+  inset: 0 0 auto 0;
+  padding-block: size(18);
+  background: clr(neutral, 050);
+  z-index: 1;
+  .container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  @media (max-width: 45em) {
+    button[data-button-type='text'] {
+      display: none;
+    }
+  }
+}

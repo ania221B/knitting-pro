@@ -1,0 +1,113 @@
+@use '../abstracts/' as *;
+
+.card {
+  --flow-spacer: 1rem;
+  display: grid;
+  grid-template-areas:
+    'tag rating'
+    'body body'
+    'price button';
+  gap: 1rem;
+  min-height: $card-min-height;
+  padding: $card-body-padding;
+  border-radius: size(40);
+
+  font-family: $ff-secondary;
+  color: clr(neutral, 400);
+
+  &[data-visibility='none'] {
+    display: none;
+  }
+
+  &__tag {
+    grid-area: tag;
+    align-self: start;
+    justify-self: start;
+    display: inline-block;
+    padding-block: 0.5em;
+    padding-inline: 1em;
+    border-radius: size(24);
+    font-size: fs(100);
+    color: clr(neutral, 100);
+  }
+
+  &__rating {
+    grid-area: rating;
+    align-self: start;
+    justify-self: end;
+
+    display: flex;
+    gap: 0.5rem;
+
+    font-weight: $fw-300;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    @media (max-width: 40em) {
+      & > *:not(:first-child) {
+        display: none;
+      }
+    }
+
+    svg {
+      width: size(16);
+      aspect-ratio: 1;
+    }
+  }
+
+  &__content {
+    grid-area: body;
+    align-self: end;
+  }
+
+  &__header + p {
+    font-weight: $fw-300;
+    @media (max-width: 40em) {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-size: fs(700);
+    font-weight: $fw-700;
+    line-height: 1.1;
+    color: clr(neutral, 900);
+
+    & + p {
+      font-size: fs(100);
+    }
+  }
+
+  &__author {
+    font-size: fs(100);
+  }
+
+  &__price {
+    grid-area: price;
+    align-self: end;
+    justify-self: start;
+
+    font-size: fs(500);
+    color: clr(neutral, 900);
+  }
+
+  .old-price {
+    font-size: fs(100);
+    text-transform: uppercase;
+    color: clr(primary, 400);
+    & > span {
+      display: inline-block;
+      text-decoration: line-through;
+    }
+  }
+
+  .button {
+    grid-area: button;
+    align-self: end;
+    justify-self: end;
+  }
+}
